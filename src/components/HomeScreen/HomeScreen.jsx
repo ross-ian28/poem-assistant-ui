@@ -5,4 +5,4 @@ export const HomeScreen = () => {
         <p>Select an option to get started.</p>
       </div>
     );
-  };
+};
