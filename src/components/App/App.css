@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50px);
+  gap: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+button {
+  width: 85%;
+  height: 100%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  text-align: center;
+  height: 30vh;
+  width: 80vw;
+  background-color: #ccc;
+}
+
+#word {
+  background-color: #ccc;
+}
+
+#quantity {
+  background-color: #ccc;
+}
