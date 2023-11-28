@@ -30,6 +30,7 @@ textarea {
   height: 30vh;
   width: 80vw;
   background-color: #ccc;
+  color: black;
 }
 
 #word {
