@@ -14,6 +14,7 @@ body {
   padding: 20px;
   background-color: #f0f0f0;
   text-align: center;
+  justify-content: center;
 }
 
 button {
@@ -33,10 +34,23 @@ textarea {
   color: black;
 }
 
-#word {
-  background-color: #ccc;
+input {
+  color: black;
 }
 
-#quantity {
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+a button {
+  width: 85%; /* Apply the same width as other buttons */
+  height: 100%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+#word, #quantity {
   background-color: #ccc;
 }
