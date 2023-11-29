@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 export const GrammerChecker = () => {
     const [message, setMessage] = useState('');
     const [response, setResponse] = useState('');
+    const [isPending, setIsPending] = useState(false);
   
     const handleSubmit = (e) => {
       e.preventDefault();
+      setIsPending(true);
       fetch('http://localhost:3001/grammer-checker', {
         method: 'POST',
         headers: {
@@ -16,6 +18,7 @@ export const GrammerChecker = () => {
         .then((res) => res.json())
         .then((data) => {
           setResponse(data.message);
+          setIsPending(false);
         })
         .catch((error) => console.error("there is an error", error));
     };
@@ -26,10 +29,11 @@ export const GrammerChecker = () => {
           <form onSubmit={handleSubmit}>
             <textarea
               value={message}
-              placeholder="Add the text you want checked"
+              placeholder="Add text here"
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
-          <button type="submit">Submit</button>
+            { !isPending && <button type="submit">Submit</button>}
+            { isPending && <button type="submit" disabled>Checking Grammer...</button>}
           <br />
           </form>
         <div id="response">{response}</div>
