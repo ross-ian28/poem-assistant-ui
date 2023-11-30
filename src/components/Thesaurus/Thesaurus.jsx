@@ -14,7 +14,7 @@ export const Thesaurus = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ word }),
+        body: JSON.stringify({ word: word }),
       })
         .then((res) => res.json())
         .then((data) => {
