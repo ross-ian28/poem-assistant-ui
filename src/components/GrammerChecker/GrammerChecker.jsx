@@ -13,7 +13,7 @@ export const GrammerChecker = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message: message }),
       })
         .then((res) => res.json())
         .then((data) => {
