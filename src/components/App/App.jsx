@@ -38,7 +38,7 @@ export default function App() {
         <button onClick={() => handleButtonClick('GrammerChecker')}>Grammar Checker</button>
         <button onClick={() => handleButtonClick('Thesaurus')}>Thesaurus</button>
         <button onClick={() => handleButtonClick('WordGenerator')}>Word generator</button>
-        <button onClick={() => handleLinkClick()}>Link to ChatGPT</button>
+        <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
         <button>Language translator</button>
       </div>
       <div className="header">
@@ -53,8 +53,4 @@ export default function App() {
       {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && <HomeScreen />}
     </div>
   );
-}
-
-const handleLinkClick = () => {
-  window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank");
 }
