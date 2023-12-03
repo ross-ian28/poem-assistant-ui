@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const PromptGenerator = () => {
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(1.0);
     const [response, setResponse] = useState('');
     const [isPending, setIsPending] = useState(false);
   
@@ -9,7 +9,7 @@ export const PromptGenerator = () => {
       e.preventDefault();
       setIsPending(true);
 
-      fetch('http://localhost:3001/prompt-generator', {
+      fetch('http://localhost:8080/prompt-generator', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -18,7 +18,6 @@ export const PromptGenerator = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
           setResponse(data.message);
           setIsPending(false);
         })

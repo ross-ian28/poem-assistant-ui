@@ -8,7 +8,7 @@ export const GrammerChecker = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       setIsPending(true);
-      fetch('http://localhost:3001/grammer-checker', {
+      fetch('http://localhost:8080/grammer-checker', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
