@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 
-export const GrammerChecker = () => {
-    const [message, setMessage] = useState('');
+export const Thesaurus = () => {
+    const [word, setWord] = useState('');
     const [response, setResponse] = useState('');
     const [isPending, setIsPending] = useState(false);
   
     const handleSubmit = (e) => {
       e.preventDefault();
       setIsPending(true);
-      fetch('https://poem-assistant-api.onrender.com/grammer-checker', {
+
+      fetch('https://poem-assistant-api.onrender.com/thesaurus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: message }),
+        body: JSON.stringify({ word: word }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -24,17 +25,15 @@ export const GrammerChecker = () => {
     };
   
     return (
-        <div className="form">
-          <h3>Grammer Checker</h3>
-          <form onSubmit={handleSubmit}>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
-            { !isPending && <button type="submit">Submit</button>}
-            { isPending && <button type="submit" disabled>Checking Grammer...</button>}
-          <br />
-          </form>
+      <div className="form">
+        <h3>Thesaurus</h3>
+        <form className="poem-form" onSubmit={handleSubmit}>
+          <label htmlFor="quantity">What word would you like to check:</label>
+          <input type="text" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
+          <br /><br />
+          { !isPending && <button type="submit">Submit</button>}
+          { isPending && <button type="submit" disabled>Finding words...</button>}
+        </form>
         <div id="response">{response}</div>
       </div>
     );

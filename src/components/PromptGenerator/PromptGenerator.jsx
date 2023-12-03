@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const PromptGenerator = () => {
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(1.0);
     const [response, setResponse] = useState('');
     const [isPending, setIsPending] = useState(false);
   
@@ -18,7 +18,6 @@ export const PromptGenerator = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
           setResponse(data.message);
           setIsPending(false);
         })

@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
 export const WordGenerator = () => {
-    const [word, setAmount] = useState(0);
+    const [amount, setAmount] = useState(1);
     const [response, setResponse] = useState('');
     const [isPending, setIsPending] = useState(false);
   
     const handleSubmit = (e) => {
       e.preventDefault();
       setIsPending(true);
-
+      
       fetch('https://poem-assistant-api.onrender.com/word-generator', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ word }),
+        body: JSON.stringify({ amount: amount }),
       })
         .then((res) => res.json())
         .then((data) => {
