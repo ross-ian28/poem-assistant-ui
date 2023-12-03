@@ -37,9 +37,9 @@ export default function App() {
         <button onClick={() => handleButtonClick('PromptGenerator')}>Prompt Generator</button>
         <button onClick={() => handleButtonClick('GrammerChecker')}>Grammar Checker</button>
         <button onClick={() => handleButtonClick('Thesaurus')}>Thesaurus</button>
-        <button onClick={() => handleButtonClick('WordGenerator')}>Word generator</button>
+        <button onClick={() => handleButtonClick('WordGenerator')}>Word Generator</button>
         <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
-        <button>Language translator</button>
+        <button>Language Translator</button>
       </div>
       <div className="header">
         <h1>Poem Assistant</h1>

@@ -9,7 +9,7 @@ export const Thesaurus = () => {
       e.preventDefault();
       setIsPending(true);
 
-      fetch('http://localhost:8080/thesaurus', {
+      fetch('https://poem-assistant-api.onrender.com/thesaurus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const Thesaurus = () => {
     return (
       <div className="form">
         <h3>Thesaurus</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="poem-form" onSubmit={handleSubmit}>
           <label htmlFor="quantity">What word would you like to check:</label>
           <input type="text" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
           <br /><br />

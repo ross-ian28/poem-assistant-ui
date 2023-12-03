@@ -8,8 +8,8 @@ export const WordGenerator = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       setIsPending(true);
-
-      fetch('http://localhost:8080/word-generator', {
+      
+      fetch('https://poem-assistant-api.onrender.com/word-generator', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const WordGenerator = () => {
     return (
       <div className="form">
         <h3>Word Generator</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="poem-form" onSubmit={handleSubmit}>
           <label htmlFor="quantity">How many words do you want:</label>
           <input type="number" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
           <br /><br />
