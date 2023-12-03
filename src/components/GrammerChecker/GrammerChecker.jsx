@@ -29,7 +29,6 @@ export const GrammerChecker = () => {
           <form onSubmit={handleSubmit}>
             <textarea
               value={message}
-              placeholder="Add text here"
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             { !isPending && <button type="submit">Submit</button>}

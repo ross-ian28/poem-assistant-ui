@@ -27,7 +27,7 @@ export const Thesaurus = () => {
     return (
       <div className="form">
         <h3>Thesaurus</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="poem-form" onSubmit={handleSubmit}>
           <label htmlFor="quantity">What word would you like to check:</label>
           <input type="text" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
           <br /><br />

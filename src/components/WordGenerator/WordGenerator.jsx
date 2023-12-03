@@ -27,7 +27,7 @@ export const WordGenerator = () => {
     return (
       <div className="form">
         <h3>Word Generator</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="poem-form" onSubmit={handleSubmit}>
           <label htmlFor="quantity">How many words do you want:</label>
           <input type="number" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
           <br /><br />
