@@ -9,7 +9,7 @@ export const WordGenerator = () => {
       e.preventDefault();
       setIsPending(true);
 
-      fetch('http://localhost:3001/word-generator', {
+      fetch('https://poem-assistant-api.onrender.com/word-generator', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

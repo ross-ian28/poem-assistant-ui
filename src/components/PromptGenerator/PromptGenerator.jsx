@@ -9,7 +9,7 @@ export const PromptGenerator = () => {
       e.preventDefault();
       setIsPending(true);
 
-      fetch('http://localhost:3001/prompt-generator', {
+      fetch('https://poem-assistant-api.onrender.com/prompt-generator', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

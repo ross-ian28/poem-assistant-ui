@@ -8,7 +8,7 @@ export const GrammerChecker = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       setIsPending(true);
-      fetch('http://localhost:3001/grammer-checker', {
+      fetch('https://poem-assistant-api.onrender.com/grammer-checker', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

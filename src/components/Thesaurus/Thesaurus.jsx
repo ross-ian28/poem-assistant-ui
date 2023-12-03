@@ -9,7 +9,7 @@ export const Thesaurus = () => {
       e.preventDefault();
       setIsPending(true);
 
-      fetch('http://localhost:3001/thesaurus', {
+      fetch('https://poem-assistant-api.onrender.com/thesaurus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
