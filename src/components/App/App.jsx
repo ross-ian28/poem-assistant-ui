@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import logo from "./../../assets/logo.png";
+
 import './App.css';
 import { HomeScreen } from '../HomeScreen/HomeScreen.jsx';
 import { PromptGenerator } from '../PromptGenerator/PromptGenerator.jsx';
@@ -51,6 +53,7 @@ export default function App() {
       </div>
       <div className="header">
         <h1>Poem Assistant</h1>
+        <img src={logo} alt="Logo" />
       </div>
       <hr></hr>
       {/* conditional rendering */}

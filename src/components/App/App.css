@@ -53,3 +53,16 @@ a button {
 #word, #quantity {
   background-color: #ccc;
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 15px;
+}
