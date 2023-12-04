@@ -10,7 +10,7 @@ body {
 .button-container {
   display: grid;
   grid-template-columns: repeat(3, 30vw);
-  grid-template-rows: repeat(2, 8vh);
+  grid-template-rows: repeat(3, 8vh);
   gap: 10px;
   padding: 20px;
   background-color: #f0f0f0;
@@ -22,8 +22,8 @@ button {
   width: 85%;
   height: 100%;
   border: 1px solid #ccc;
-  background-color: #fff;
   cursor: pointer;
+  color: lightgrey;
 }
 
 textarea {
@@ -46,10 +46,8 @@ a {
   text-decoration: none;
 }
 a button {
-  width: 85%; /* Apply the same width as other buttons */
+  width: 85%;
   height: 100%;
-  border: 1px solid #ccc;
-  background-color: #fff;
   cursor: pointer;
 }
 #word, #quantity {

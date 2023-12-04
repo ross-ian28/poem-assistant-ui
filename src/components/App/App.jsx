@@ -5,12 +5,14 @@ import { PromptGenerator } from '../PromptGenerator/PromptGenerator.jsx';
 import { GrammerChecker } from '../GrammerChecker/GrammerChecker.jsx';
 import { Thesaurus } from '../Thesaurus/Thesaurus.jsx';
 import { WordGenerator } from '../WordGenerator/WordGenerator.jsx';
+import { Dictionary } from '../Dictionary/Dictionary.jsx';
 
 export default function App() {
   const [isPromptGenerator, setIsPromptGenerator] = useState(false);
   const [isGrammerChecker, setIsGrammerChecker] = useState(false);
   const [isThesaurus, setIsThesaurus] = useState(false);
   const [isWordGenerator, setIsWordGenerator] = useState(false);
+  const [isDictionary, setIsDictionary] = useState(false);
 
   const handleButtonClick = (buttonType) => {
     // Reset all flags to false
@@ -18,6 +20,7 @@ export default function App() {
     setIsGrammerChecker(false);
     setIsThesaurus(false);
     setIsWordGenerator(false);
+    setIsDictionary(false);
 
     // Set the flag based on the buttonType
     if (buttonType === 'PromptGenerator') {
@@ -28,6 +31,8 @@ export default function App() {
       setIsThesaurus(true);
     } else if (buttonType === 'WordGenerator') {
       setIsWordGenerator(true);
+    } else if (buttonType === 'Dictionary') {
+      setIsDictionary(true);
   }
   };
 
@@ -39,7 +44,10 @@ export default function App() {
         <button onClick={() => handleButtonClick('Thesaurus')}>Thesaurus</button>
         <button onClick={() => handleButtonClick('WordGenerator')}>Word Generator</button>
         <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
+        <button onClick={() => handleButtonClick('Dictionary')}>Dictionary</button>
         <button>Language Translator</button>
+        <button>Idea Storage</button>
+        <button>Coming Soon...</button>
       </div>
       <div className="header">
         <h1>Poem Assistant</h1>
@@ -50,7 +58,8 @@ export default function App() {
       {isGrammerChecker && <GrammerChecker />}
       {isThesaurus && <Thesaurus />}
       {isWordGenerator && <WordGenerator />}
-      {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && <HomeScreen />}
+      {isDictionary && <Dictionary />}
+      {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && !isDictionary && <HomeScreen />}
     </div>
   );
 }
