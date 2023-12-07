@@ -54,11 +54,13 @@ Poem Assistant was made to help the user create poems. The tools it provides inc
 ## Usage
 <h3>Default Homepage</h3>
 <br>
-<img width="400" alt="default homepage" src="https://github.com/ross-ian28/poem-assistant-ui/assets/92543573/008e2366-9b3f-4906-bd94-834dcdd1f3be">
+<img width="400" alt="default homepage" src="https://github.com/ross-ian28/poem-assistant-ui/assets/92543573/d44c842c-d1fc-4f94-99b4-a95dbd6ec5b8">
+
 
 <h3>Poem Prompt Generator</h3>
 <br>
-<img width="400" alt="prompt-generator-af" src="https://github.com/ross-ian28/poem-assistant-ui/assets/92543573/a70a60da-60e8-491a-a43c-383f9afec0e3">
+<img width="400" alt="prompt-generator-ui" src="https://github.com/ross-ian28/poem-assistant-ui/assets/92543573/26793fc7-96f9-4a7a-b354-efbdea763645">
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
