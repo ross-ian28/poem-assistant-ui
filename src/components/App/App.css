@@ -26,6 +26,9 @@ button {
   color: lightgrey;
 }
 
+.submit {
+  width: 10rem;
+}
 textarea {
   resize: none;
   text-align: center;
@@ -65,4 +68,17 @@ img {
   width: 100px;
   position: relative;
   top: 15px;
+}
+
+.response {
+  border: 1px solid white;
+  width: 85%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.response-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
