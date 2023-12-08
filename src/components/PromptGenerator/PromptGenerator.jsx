@@ -25,16 +25,22 @@ export const PromptGenerator = () => {
     };
   
     return (
-      <div className="form">
-        <h3>Prompt Generator</h3>
-        <form className="poem-form" onSubmit={handleSubmit}>
-          <label htmlFor="quantity">How many poem prompts do you want:</label>
-          <input type="number" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
-          <br /><br />
-          { !isPending && <button type="submit">Submit</button>}
-          { isPending && <button type="submit" disabled>Generating prompts...</button>}
-        </form>
-        <div id="response">{response}</div>
+      <div className="component-container">
+        <div className="form">
+          <h3>Prompt Generator</h3>
+          <form className="poem-form" onSubmit={handleSubmit}>
+            <label htmlFor="quantity">How many poem prompts do you want:</label>
+            <input type="number" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
+            <br /><br />
+            { !isPending && <button type="submit" className="submit">Submit</button>}
+            { isPending && <button type="submit" className="submit" disabled>Generating Prompts...</button>}
+          </form>
+          { response && (
+            <div className="response-container">
+              <div className="response">{response}</div>
+            </div>
+          )}
+        </div>
       </div>
     );
   };
