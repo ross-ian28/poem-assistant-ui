@@ -32,11 +32,15 @@ export const GrammerChecker = () => {
               placeholder="Add text here"
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
-            { !isPending && <button type="submit">Submit</button>}
-            { isPending && <button type="submit" disabled>Checking Grammer...</button>}
+            { !isPending && <button type="submit" className="submit">Submit</button>}
+            { isPending && <button type="submit" className="submit" disabled>Checking Grammer...</button>}
           <br />
           </form>
-        <div id="response">{response}</div>
+          { response && (
+            <div className="response-container">
+              <div className="response">{response}</div>
+            </div>
+          )}
       </div>
     );
   };

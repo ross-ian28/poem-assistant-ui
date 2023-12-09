@@ -31,10 +31,14 @@ export const Dictionary = () => {
           <label htmlFor="quantity">What word would you like to find the definition of:</label>
           <input type="text" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
           <br /><br />
-          { !isPending && <button type="submit">Submit</button>}
-          { isPending && <button type="submit" disabled>Finding definition...</button>}
+          { !isPending && <button type="submit" className="submit">Submit</button>}
+          { isPending && <button type="submit" className="submit" disabled>Finding definition...</button>}
         </form>
-        <div id="response">{response}</div>
+        { response && (
+          <div className="response-container">
+            <div className="response">{response}</div>
+          </div>
+        )}
       </div>
     );
   };
