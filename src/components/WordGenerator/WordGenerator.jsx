@@ -31,10 +31,14 @@ export const WordGenerator = () => {
           <label htmlFor="quantity">How many words do you want:</label>
           <input type="number" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
           <br /><br />
-          { !isPending && <button type="submit">Submit</button>}
-          { isPending && <button type="submit" disabled>Generating words...</button>}
+          { !isPending && <button type="submit" className="submit">Submit</button>}
+          { isPending && <button type="submit" className="submit" disabled>Generating words...</button>}
         </form>
-        <div id="response">{response}</div>
+        { response && (
+          <div className="response-container">
+            <div className="response">{response}</div>
+          </div>
+        )}
       </div>
     );
   };
