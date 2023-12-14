@@ -8,6 +8,7 @@ import { GrammerChecker } from '../GrammerChecker/GrammerChecker.jsx';
 import { Thesaurus } from '../Thesaurus/Thesaurus.jsx';
 import { WordGenerator } from '../WordGenerator/WordGenerator.jsx';
 import { Dictionary } from '../Dictionary/Dictionary.jsx';
+import { IdeaStorage } from '../IdeaStorage/IdeaStorage.jsx';
 
 export default function App() {
   const [isPromptGenerator, setIsPromptGenerator] = useState(false);
@@ -15,6 +16,7 @@ export default function App() {
   const [isThesaurus, setIsThesaurus] = useState(false);
   const [isWordGenerator, setIsWordGenerator] = useState(false);
   const [isDictionary, setIsDictionary] = useState(false);
+  const [isIdeaStorage, setIsIdeaStorage] = useState(false);
 
   const handleButtonClick = (buttonType) => {
     // Reset all flags to false
@@ -23,6 +25,7 @@ export default function App() {
     setIsThesaurus(false);
     setIsWordGenerator(false);
     setIsDictionary(false);
+    setIsIdeaStorage(false);
 
     // Set the flag based on the buttonType
     if (buttonType === 'PromptGenerator') {
@@ -35,6 +38,8 @@ export default function App() {
       setIsWordGenerator(true);
     } else if (buttonType === 'Dictionary') {
       setIsDictionary(true);
+    } else if (buttonType === 'IdeaStorage') {
+      setIsIdeaStorage(true);
   }
   };
 
@@ -48,7 +53,7 @@ export default function App() {
         <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
         <button onClick={() => handleButtonClick('Dictionary')}>Dictionary</button>
         <button>Language Translator</button>
-        <button>Idea Storage</button>
+        <button onClick={() => handleButtonClick('IdeaStorage')}>Idea Storage</button>
         <button>Coming Soon...</button>
       </div>
       <div className="header">
