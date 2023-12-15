@@ -40,7 +40,7 @@ export default function App() {
       setIsDictionary(true);
     } else if (buttonType === 'IdeaStorage') {
       setIsIdeaStorage(true);
-  }
+    }
   };
 
   return (
@@ -61,13 +61,13 @@ export default function App() {
         <img src={logo} alt="Logo" />
       </div>
       <hr></hr>
-      {/* conditional rendering */}
       {isPromptGenerator && <PromptGenerator />}
       {isGrammerChecker && <GrammerChecker />}
       {isThesaurus && <Thesaurus />}
       {isWordGenerator && <WordGenerator />}
       {isDictionary && <Dictionary />}
-      {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && !isDictionary && <HomeScreen />}
+      {isIdeaStorage && <IdeaStorage />}
+      {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && !isDictionary && !isIdeaStorage && <HomeScreen />}
     </div>
   );
 }
