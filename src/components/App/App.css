@@ -31,7 +31,7 @@ button {
 textarea {
   resize: none;
   text-align: center;
-  height: 30vh;
+  height: 20vh;
   width: 80vw;
   background-color: #ccc;
   color: black;
@@ -79,6 +79,16 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container .submit {
+  margin: 20px;
 }
 
 @media (max-width: 452px) {
