@@ -26,16 +26,16 @@ export const GrammerChecker = () => {
     return (
         <div className="form">
           <h3>Grammer Checker</h3>
-          <form onSubmit={handleSubmit}>
-            <textarea
-              value={message}
-              placeholder="Add text here"
-              onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
-            { !isPending && <button type="submit" className="submit">Submit</button>}
-            { isPending && <button type="submit" className="submit" disabled>Checking Grammer...</button>}
-          <br />
-          </form>
+            <form className="form-container" onSubmit={handleSubmit}>
+              <textarea
+                value={message}
+                placeholder="Add text here"
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+              { !isPending && <button type="submit" className="submit">Submit</button>}
+              { isPending && <button type="submit" className="submit" disabled>Checking Grammer...</button>}
+            <br />
+            </form>
           { response && (
             <div className="response-container">
               <div className="response">{response}</div>
