@@ -111,4 +111,10 @@ img {
   img {
     margin-right: 5vw;
   }
+
+  input[type="number"], input[type="text"] {
+    font-size: 16px;
+    text-align: center;
+    padding: 8px; 
+  }
 }
