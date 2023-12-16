@@ -4,7 +4,7 @@ import { Login } from '.././Login/Login.jsx';
 import { Notes } from '.././Notes/Notes.jsx';
 
 export const IdeaStorage  = () => {
-    const [currentPage, setCurrentPage] = useState('login');
+    const [currentPage, setCurrentPage] = useState('notes');
 
     const togglePage = (pageName) => {
         setCurrentPage(pageName);
