@@ -54,7 +54,7 @@ export default function App() {
         <button onClick={() => handleButtonClick('Dictionary')}>Dictionary</button>
         <button>Language Translator</button>
         <button onClick={() => handleButtonClick('IdeaStorage')}>Idea Storage</button>
-        <button>Coming Soon...</button>
+
       </div>
       <div className="header">
         <h1>Poem Assistant</h1>
