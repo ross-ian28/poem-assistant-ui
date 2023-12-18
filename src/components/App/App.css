@@ -38,7 +38,8 @@ textarea {
 }
 
 input {
-  color: black;
+  color: white;
+  text-align: center;
 }
 
 a {
@@ -91,6 +92,21 @@ img {
   margin: 20px;
 }
 
+.register-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-form input {
+  margin: 20px;
+}
+
+.signup-link-btn, .login-link-btn {
+  width: 25%;
+  margin: 15px;
+}
+
 @media (max-width: 452px) {
   .button-container {
     grid-template-columns: repeat(2, 45vw);
@@ -110,5 +126,11 @@ img {
 
   img {
     margin-right: 5vw;
+  }
+
+  input[type="number"], input[type="text"] {
+    font-size: 16px;
+    text-align: center;
+    padding: 8px; 
   }
 }
