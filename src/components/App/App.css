@@ -38,7 +38,8 @@ textarea {
 }
 
 input {
-  color: black;
+  color: white;
+  text-align: center;
 }
 
 a {
@@ -89,6 +90,21 @@ img {
 
 .form-container .submit {
   margin: 20px;
+}
+
+.register-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-form input {
+  margin: 20px;
+}
+
+.signup-link-btn, .login-link-btn {
+  width: 25%;
+  margin: 15px;
 }
 
 @media (max-width: 452px) {
