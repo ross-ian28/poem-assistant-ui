@@ -4,7 +4,7 @@ import { Login } from '.././Login/Login.jsx';
 import { Notes } from '.././Notes/Notes.jsx';
 
 export const IdeaStorage  = () => {
-    const [currentPage, setCurrentPage] = useState('notes');
+    const [currentPage, setCurrentPage] = useState('login');
 
     const togglePage = (pageName) => {
         setCurrentPage(pageName);
@@ -12,11 +12,6 @@ export const IdeaStorage  = () => {
 
     return (
       <div>
-        <h3>Idea Storage</h3>
-        
-        <button onClick={() => togglePage('register')}>Register</button>
-        <button onClick={() => togglePage('login')}>Login</button>
-
         {currentPage === 'notes' ? (
           <Notes onFormSwitch={togglePage} />
         ) : currentPage === 'register' ? (
