@@ -27,6 +27,7 @@ button {
 .submit {
   width: 10rem;
   padding: 10px;
+  margin: 10px;
 }
 textarea {
   resize: none;
@@ -38,7 +39,7 @@ textarea {
 }
 
 input {
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -90,15 +91,17 @@ img {
 
 .form-container .submit {
   margin: 20px;
+  width: 10rem;
+  padding: 10px;
 }
 
-.register-form {
+.register-form, .login-form {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.register-form input {
+.register-form input, .login-form input {
   margin: 20px;
 }
 
