@@ -45,6 +45,11 @@ export default function App() {
 
   return (
     <div className="App">
+      <hr></hr>
+      <div className="header">
+        <h1>Poem Assistant</h1>
+        <img src={logo} alt="Logo" />
+      </div>
       <div className="button-container">
         <button onClick={() => handleButtonClick('PromptGenerator')}>Prompt Generator</button>
         <button onClick={() => handleButtonClick('GrammerChecker')}>Grammar Checker</button>
@@ -56,11 +61,6 @@ export default function App() {
         <button onClick={() => handleButtonClick('IdeaStorage')}>Idea Storage</button>
 
       </div>
-      <div className="header">
-        <h1>Poem Assistant</h1>
-        <img src={logo} alt="Logo" />
-      </div>
-      <hr></hr>
       {isPromptGenerator && <PromptGenerator />}
       {isGrammerChecker && <GrammerChecker />}
       {isThesaurus && <Thesaurus />}
@@ -68,6 +68,7 @@ export default function App() {
       {isDictionary && <Dictionary />}
       {isIdeaStorage && <IdeaStorage />}
       {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && !isDictionary && !isIdeaStorage && <HomeScreen />}
+      <hr></hr>
     </div>
   );
 }
