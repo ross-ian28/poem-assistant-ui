@@ -77,6 +77,10 @@ img {
   font-weight: bold;
 }
 
+.submit {
+  width: 25%;
+}
+
 .response-container {
   display: flex;
   justify-content: center;
@@ -89,12 +93,6 @@ img {
   align-items: center;
 }
 
-.form-container .submit {
-  margin: 20px;
-  width: 10rem;
-  padding: 10px;
-}
-
 .register-form, .login-form {
   display: flex;
   align-items: center;
@@ -102,7 +100,7 @@ img {
 }
 
 .register-form input, .login-form input {
-  margin: 20px;
+  margin: 10px;
 }
 
 .signup-link-btn, .login-link-btn {
