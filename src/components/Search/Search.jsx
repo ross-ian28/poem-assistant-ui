@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 export const Search = () => {
     const [question, setQuestion] = useState('');
@@ -9,21 +10,24 @@ export const Search = () => {
       e.preventDefault();
       setIsPending(true);
 
-      fetch('http://localhost:8080/search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ question: question }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setResponse(data.message);
+      const headers = {
+        'Content-Type': 'application/json'   
+      };
+
+      const requestBody = {
+        question: question
+      };
+
+      axios.post('https://poem-assistant-api.onrender.com/search', requestBody, { headers })
+        .then(response => {
+          setResponse(response.data.message);
           setIsPending(false);
         })
-        .catch((error) => console.error("there is an error", error));
+        .catch(error => {
+          console.error("there is an error", error)
+        });
     };
-  
+
     return (
       <div className="form">
         <h3>General Search</h3>
