@@ -29,6 +29,7 @@ button {
   padding: 10px;
   margin: 10px;
 }
+
 textarea {
   resize: none;
   text-align: center;
@@ -49,11 +50,13 @@ a {
   justify-content: center;
   text-decoration: none;
 }
+
 a button {
   width: 85%;
   height: 100%;
   cursor: pointer;
 }
+
 #word, #quantity {
   background-color: #ccc;
 }
