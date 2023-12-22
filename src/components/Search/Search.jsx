@@ -18,7 +18,7 @@ export const Search = () => {
         question: question
       };
 
-      axios.post('http://localhost:8080/search', requestBody, { headers })
+      axios.post('https://poem-assistant-api.onrender.com/search', requestBody, { headers })
         .then(response => {
           setResponse(response.data.message);
           setIsPending(false);
