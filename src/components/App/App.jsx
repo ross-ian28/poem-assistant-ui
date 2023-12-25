@@ -12,6 +12,7 @@ import { Search } from '../Search/Search.jsx';
 import { IdeaStorage } from '../IdeaStorage/IdeaStorage.jsx';
 
 export default function App() {
+  // Add const for saving the previous 10 users backend requests
   const [isPromptGenerator, setIsPromptGenerator] = useState(false);
   const [isGrammerChecker, setIsGrammerChecker] = useState(false);
   const [isThesaurus, setIsThesaurus] = useState(false);
@@ -29,6 +30,7 @@ export default function App() {
     setIsDictionary(false);
     setIsSearch(false);
     setIsIdeaStorage(false);
+    // setIsPoemStorage(false);  ai assistant tool while writing the poems
 
     // Set the flag based on the buttonType
     if (buttonType === 'PromptGenerator') {
@@ -73,7 +75,6 @@ export default function App() {
       {isSearch && <Search/>}
       {isIdeaStorage && <IdeaStorage />}
       {!isPromptGenerator && !isGrammerChecker && !isThesaurus && !isWordGenerator && !isDictionary && !isSearch && !isIdeaStorage && <HomeScreen />}
-      <hr></hr>
     </div>
   );
 }

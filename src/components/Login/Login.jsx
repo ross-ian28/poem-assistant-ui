@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 export const Login  = (props) => {
   const [username, setUsername] = useState('');
@@ -7,9 +8,25 @@ export const Login  = (props) => {
   const [isPending, setIsPending] = useState(false);
 
   const handleSubmit = async (e) => {
-      // Login user backend call
-      setError('');
+    e.preventDefault();
+    setError('');
+
+    const headers = {
+      'Content-Type': 'application/json'   
+    };
+    const requestBody = {
+      username: username,
+      password: pass
+    };
+
+    await axios.post('https://poem-assistant-api.onrender.com/login', requestBody, { headers })
+    .then(response => {
+      props.onFormSwitch('notes')
+    })
+    .catch(error => {
+      setError(error.message);
       setIsPending(false);
+    });
   }
 
   return (
