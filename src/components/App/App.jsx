@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import logo from "./../../assets/logo.png";
-
 import './App.css';
+
+// Import components
 import { HomeScreen } from '../HomeScreen/HomeScreen.jsx';
 import { PromptGenerator } from '../PromptGenerator/PromptGenerator.jsx';
 import { GrammerChecker } from '../GrammerChecker/GrammerChecker.jsx';
@@ -12,7 +13,6 @@ import { Search } from '../Search/Search.jsx';
 import { IdeaStorage } from '../IdeaStorage/IdeaStorage.jsx';
 
 export default function App() {
-  // Add const for saving the previous 10 users backend requests
   const [isPromptGenerator, setIsPromptGenerator] = useState(false);
   const [isGrammerChecker, setIsGrammerChecker] = useState(false);
   const [isThesaurus, setIsThesaurus] = useState(false);
@@ -30,7 +30,6 @@ export default function App() {
     setIsDictionary(false);
     setIsSearch(false);
     setIsIdeaStorage(false);
-    // setIsPoemStorage(false);  ai assistant tool while writing the poems
 
     // Set the flag based on the buttonType
     if (buttonType === 'PromptGenerator') {
@@ -62,10 +61,10 @@ export default function App() {
         <button onClick={() => handleButtonClick('GrammerChecker')}>Grammar Checker</button>
         <button onClick={() => handleButtonClick('Thesaurus')}>Thesaurus</button>
         <button onClick={() => handleButtonClick('WordGenerator')}>Word Generator</button>
-        <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
+        <button onClick={() => handleButtonClick('IdeaStorage')}>Idea Storage</button>
         <button onClick={() => handleButtonClick('Dictionary')}>Dictionary</button>
         <button onClick={() => handleButtonClick('Search')}>General Search</button>
-        <button onClick={() => handleButtonClick('IdeaStorage')}>Idea Storage</button>
+        <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
       </div>
       {isPromptGenerator && <PromptGenerator />}
       {isGrammerChecker && <GrammerChecker />}
