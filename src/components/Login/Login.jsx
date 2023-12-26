@@ -31,7 +31,7 @@ export const Login  = (props) => {
 
   return (
     <div>
-      <h3>Idea Storage Login</h3>
+      <h3>Login</h3>
       <form className="login-form" onSubmit={handleSubmit}>
           <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="your username" id="username" name="username" />
           <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="your password" id="password" name="password" />
