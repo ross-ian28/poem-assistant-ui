@@ -12,6 +12,7 @@ export const IdeaStorage  = () => {
 
     return (
       <div>
+        <h2>Idea Storage</h2>
         {currentPage === 'notes' ? (
           <Notes onFormSwitch={togglePage} />
         ) : currentPage === 'register' ? (
