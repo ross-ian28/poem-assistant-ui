@@ -33,15 +33,20 @@ button {
 textarea {
   resize: none;
   text-align: center;
-  height: 20vh;
+  height: 18vh;
   width: 80vw;
   background-color: #ccc;
   color: black;
+  padding-top: 12vh;
 }
 
 input {
   color: black;
   text-align: center;
+}
+
+input::placeholder, textarea::placeholder {
+  font-weight: bold;
 }
 
 a {
@@ -57,7 +62,7 @@ a button {
   cursor: pointer;
 }
 
-#word, #quantity {
+#word, #quantity, #username, #password {
   background-color: #ccc;
 }
 
