@@ -35,7 +35,7 @@ export const PromptGenerator = () => {
       <div className="form">
         <h3>Prompt Generator</h3>
         <form className="poem-form" onSubmit={handleSubmit}>
-          <input type="number" placeholder="how many prompts do you want" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
+          <input type="number" placeholder="amount of prompts" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
           <br /><br />
           { !isPending && <button type="submit" className="submit">Submit</button>}
           { isPending && <button type="submit" className="submit" disabled>Generating Prompts...</button>}
