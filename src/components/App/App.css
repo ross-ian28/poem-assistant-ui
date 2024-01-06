@@ -33,7 +33,7 @@ button {
 textarea {
   resize: none;
   text-align: center;
-  height: 18vh;
+  height: 14vh;
   width: 80vw;
   background-color: #ccc;
   color: black;
@@ -44,7 +44,7 @@ input {
   color: black;
   text-align: center;
   height: 5vh;
-  width: 30vw;
+  width: 22vw;
 }
 
 input::placeholder, textarea::placeholder {
@@ -150,7 +150,7 @@ input::placeholder {
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 452px) {
   input::placeholder {
     color: transparent;
   }
