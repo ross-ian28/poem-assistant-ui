@@ -33,8 +33,7 @@ export const Search = () => {
 		<div className="form">
 			<h3>General Search</h3>
 			<form className="poem-form" onSubmit={handleSubmit}>
-				<label htmlFor="quantity">What would you like to ask:</label>
-				<input type="text" id="word" name="word" onChange={(e) => setQuestion(e.target.value)}/>
+				<input type="text" placeholder="your question here" id="word" name="word" onChange={(e) => setQuestion(e.target.value)}/>
 				<br /><br />
 				{ !isPending && <button type="submit" className="submit">Submit</button>}
 				{ isPending && <button type="submit" className="submit" disabled>Answering question...</button>}

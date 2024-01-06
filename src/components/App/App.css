@@ -33,7 +33,7 @@ button {
 textarea {
   resize: none;
   text-align: center;
-  height: 18vh;
+  height: 14vh;
   width: 80vw;
   background-color: #ccc;
   color: black;
@@ -43,6 +43,8 @@ textarea {
 input {
   color: black;
   text-align: center;
+  height: 5vh;
+  width: 22vw;
 }
 
 input::placeholder, textarea::placeholder {
@@ -116,6 +118,10 @@ img {
   margin: 15px;
 }
 
+input::placeholder {
+  font-size: 0.9rem; 
+}
+
 @media (max-width: 452px) {
   .button-container {
     grid-template-columns: repeat(2, 45vw);
@@ -141,5 +147,11 @@ img {
     font-size: 16px;
     text-align: center;
     padding: 8px; 
+  }
+}
+
+@media (max-width: 452px) {
+  input::placeholder {
+    color: transparent;
   }
 }

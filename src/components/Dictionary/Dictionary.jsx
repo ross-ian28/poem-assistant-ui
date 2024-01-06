@@ -34,8 +34,7 @@ export const Dictionary = () => {
     <div className="form">
       <h3>Dictionary</h3>
       <form className="poem-form" onSubmit={handleSubmit}>
-        <label htmlFor="quantity">What word would you like to find the definition of:</label>
-        <input type="text" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
+        <input type="text" placeholder="your word here" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
         <br /><br />
         { !isPending && <button type="submit" className="submit">Submit</button>}
         { isPending && <button type="submit" className="submit" disabled>Finding definition...</button>}
