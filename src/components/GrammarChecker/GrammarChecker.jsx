@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export const GrammerChecker = () => {
+export const GrammarChecker = () => {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState('');
   const [isPending, setIsPending] = useState(false);
@@ -19,7 +19,7 @@ export const GrammerChecker = () => {
       message: message
     };
 
-    await axios.post('https://poem-assistant-api.onrender.com/grammer-checker', requestBody, { headers })
+    await axios.post('https://poem-assistant-api.onrender.com/grammar-checker', requestBody, { headers })
     .then(response => {
       setResponse(response.data.message);
       setIsPending(false);
@@ -32,7 +32,7 @@ export const GrammerChecker = () => {
 
   return (
     <div className="form">
-      <h3>Grammer Checker</h3>
+      <h3>grammar Checker</h3>
         <form className="form-container" onSubmit={handleSubmit}>
           <textarea
             value={message}
@@ -40,7 +40,7 @@ export const GrammerChecker = () => {
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           { !isPending && <button type="submit" className="submit">Submit</button>}
-          { isPending && <button type="submit" className="submit" disabled>Checking Grammer...</button>}
+          { isPending && <button type="submit" className="submit" disabled>Checking grammar...</button>}
         <br />
         </form>
       { response && (
