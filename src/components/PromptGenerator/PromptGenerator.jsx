@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { LoadingAnimation } from '.././LoadingAnimation/LoadingAnimation.jsx';
 import axios from 'axios';
 
 export const PromptGenerator = () => {
@@ -40,6 +41,7 @@ export const PromptGenerator = () => {
           { !isPending && <button type="submit" className="submit">Submit</button>}
           { isPending && <button type="submit" className="submit" disabled>Generating Prompts...</button>}
         </form>
+        <div id="running"></div>
         { response && (
           <div className="response-container">
             <div className="response">{response}</div>
