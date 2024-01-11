@@ -36,8 +36,8 @@ export const Thesaurus = () => {
       <form className="poem-form" onSubmit={handleSubmit}>
         <input type="text" placeholder="your word here" id="word" name="word" onChange={(e) => setWord(e.target.value)}/>
         <br /><br />
-        { !isPending && <button type="submit" className="submit">Submit</button>}
-        { isPending && <button type="submit" className="submit" disabled>Finding words...</button>}
+        { !isPending && <button className="submit">Submit</button>}
+        { isPending && <button className="submitting" disabled>Finding words</button>}
       </form>
       { response && (
         <div className="response-container">

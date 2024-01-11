@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { LoadingAnimation } from '.././LoadingAnimation/LoadingAnimation.jsx';
 import axios from 'axios';
 
 export const PromptGenerator = () => {
@@ -39,7 +38,7 @@ export const PromptGenerator = () => {
           <input type="number" placeholder="amount of prompts" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
           <br /><br />
           { !isPending && <button type="submit" className="submit">Submit</button>}
-          { isPending && <button type="submit" className="submit" disabled>Generating Prompts...</button>}
+          { isPending && <button type="submit" className="submitting" disabled>Generating Prompts</button>}
         </form>
         <div id="running"></div>
         { response && (
