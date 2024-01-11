@@ -35,8 +35,8 @@ export const Register  = (props) => {
       <form className="register-form" onSubmit={handleSubmit}>
           <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="your username" id="username" name="username" />
           <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="your password" id="password" name="password" />
-          { !isPending && <button className="submit" type="submit">Sign Up</button>}
-          { isPending && <button className="submit" type="submit" disabled>Signing Up</button>}
+          { !isPending && <button className="submit">Sign Up</button>}
+          { isPending && <button className="submitting" disabled>Signing Up</button>}
       </form>
       <button className="signup-link-btn" onClick={() => props.onFormSwitch('login')}>Login Here</button>
       <div className="error-msg">
