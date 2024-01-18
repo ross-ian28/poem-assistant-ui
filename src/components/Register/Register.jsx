@@ -10,6 +10,7 @@ export const Register  = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setIsPending(true);
 
     const headers = {
       'Content-Type': 'application/json'   
@@ -18,8 +19,7 @@ export const Register  = (props) => {
       username: username,
       password: pass
     };
-
-    await axios.post('https://poem-assistant-api.onrender.com/register', requestBody, { headers })
+    await axios.post('https://poem-assistant-api.onrender.com/signup', requestBody, { headers })
     .then(response => {
       props.onFormSwitch('login')
     })
@@ -35,13 +35,13 @@ export const Register  = (props) => {
       <form className="register-form" onSubmit={handleSubmit}>
           <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="your username" id="username" name="username" />
           <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="your password" id="password" name="password" />
-          { !isPending && <button className="submit">Sign Up</button>}
-          { isPending && <button className="submitting" disabled>Signing Up</button>}
+          { !isPending && <button className="submit" type="submit">Sign Up</button>}
+          { isPending && <button className="submit" type="submit" disabled>Signing Up...</button>}
       </form>
-      <button className="signup-link-btn" onClick={() => props.onFormSwitch('login')}>Login Here</button>
       <div className="error-msg">
           {errorMsg}
       </div>
+      <button className="signup-link-btn" onClick={() => props.onFormSwitch('login')}>Login Here</button>
     </div>
   );
 };
