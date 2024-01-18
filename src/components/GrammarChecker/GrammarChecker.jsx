@@ -39,8 +39,8 @@ export const GrammarChecker = () => {
             placeholder="Add text here"
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          { !isPending && <button type="submit" className="submit">Submit</button>}
-          { isPending && <button type="submit" className="submit" disabled>Checking grammar...</button>}
+          { !isPending && <button className="submit">Submit</button>}
+          { isPending && <button className="submitting" disabled>Checking grammar</button>}
         <br />
         </form>
       { response && (

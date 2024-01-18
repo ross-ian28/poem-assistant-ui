@@ -36,8 +36,8 @@ export const WordGenerator = () => {
       <form className="poem-form" onSubmit={handleSubmit}>
         <input type="number" placeholder="amount of words" id="quantity" name="quantity" min="1" onChange={(e) => setAmount(e.target.value)} />
         <br /><br />
-        { !isPending && <button type="submit" className="submit">Submit</button>}
-        { isPending && <button type="submit" className="submit" disabled>Generating words...</button>}
+        { !isPending && <button className="submit">Submit</button>}
+        { isPending && <button className="submitting" disabled>Generating words</button>}
       </form>
       { response && (
         <div className="response-container">
