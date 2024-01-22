@@ -35,8 +35,8 @@ export const Search = () => {
 			<form className="poem-form" onSubmit={handleSubmit}>
 				<input type="text" placeholder="your question here" id="word" name="word" onChange={(e) => setQuestion(e.target.value)}/>
 				<br /><br />
-				{ !isPending && <button type="submit" className="submit">Submit</button>}
-				{ isPending && <button type="submit" className="submit" disabled>Answering question...</button>}
+				{ !isPending && <button className="submit">Submit</button>}
+				{ isPending && <button className="submitting" disabled>Answering question</button>}
 			</form>
 			{ response && (
 				<div className="response-container">
