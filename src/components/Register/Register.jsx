@@ -24,7 +24,8 @@ export const Register  = (props) => {
       props.onFormSwitch('login')
     })
     .catch(error => {
-      setError(error.message);
+      console.log(error.message)
+      setError("Error signing up");
       setIsPending(false);
     });
   }
