@@ -11,6 +11,7 @@ import { WordGenerator } from '../WordGenerator/WordGenerator.jsx';
 import { Dictionary } from '../Dictionary/Dictionary.jsx';
 import { Search } from '../Search/Search.jsx';
 import { IdeaStorage } from '../IdeaStorage/IdeaStorage.jsx';
+import { Rhymes } from '../Rhymes/Rhymes.jsx';
 
 export default function App() {
   const [isPromptGenerator, setIsPromptGenerator] = useState(false);
@@ -20,6 +21,7 @@ export default function App() {
   const [isDictionary, setIsDictionary] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [isIdeaStorage, setIsIdeaStorage] = useState(false);
+  const [isRhymes, setIsRhymes] = useState(false);
 
   const handleButtonClick = (buttonType) => {
     // Reset all flags to false
@@ -30,6 +32,7 @@ export default function App() {
     setIsDictionary(false);
     setIsSearch(false);
     setIsIdeaStorage(false);
+    setIsRhymes(false);
 
     // Set the flag based on the buttonType
     if (buttonType === 'PromptGenerator') {
@@ -46,6 +49,8 @@ export default function App() {
       setIsSearch(true);
     } else if (buttonType === 'IdeaStorage') {
       setIsIdeaStorage(true);
+    } else if (buttonType === 'Rhymes') {
+      setIsRhymes(true);
     }
   };
 
@@ -64,6 +69,7 @@ export default function App() {
         <button onClick={() => handleButtonClick('IdeaStorage')}>Idea Storage</button>
         <button onClick={() => handleButtonClick('Dictionary')}>Dictionary</button>
         <button onClick={() => handleButtonClick('Search')}>General Search</button>
+        <button onClick={() => handleButtonClick('Rhymes')}>Rhyme Generator</button>
         <button onClick={() => window.open("https://chat.openai.com/?model=text-davinci-002-render-sha", "_blank")}>Link to ChatGPT</button>
       </div>
       {isPromptGenerator && <PromptGenerator />}
@@ -73,7 +79,8 @@ export default function App() {
       {isDictionary && <Dictionary />}
       {isSearch && <Search/>}
       {isIdeaStorage && <IdeaStorage />}
-      {!isPromptGenerator && !isGrammarChecker && !isThesaurus && !isWordGenerator && !isDictionary && !isSearch && !isIdeaStorage && <HomeScreen />}
+      {isRhymes && <Rhymes />}
+      {!isPromptGenerator && !isGrammarChecker && !isThesaurus && !isWordGenerator && !isDictionary && !isSearch && !isIdeaStorage && !isRhymes && <HomeScreen />}
     </div>
   );
 }
