@@ -21,10 +21,16 @@ export const Login  = (props) => {
     };
     await axios.post('https://poem-assistant-api.onrender.com/login', requestBody, { headers })
     .then(response => {
-      props.onFormSwitch('notes')
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token);
+        props.onFormSwitch('notes')
+      }
+      setError("Error logging in");
+      setIsPending(false);
     })
     .catch(error => {
-      setError(error.message);
+      console.log(error.message);
+      setError("Error logging in");
       setIsPending(false);
     });
   }
@@ -36,7 +42,7 @@ export const Login  = (props) => {
           <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="your username" id="username" name="username" />
           <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="your password" id="password" name="password" />
           { !isPending && <button className="submit" type="submit">Login</button>}
-          { isPending && <button className="submit" type="submit" disabled>Logging In</button>}
+          { isPending && <button className="submit" type="submit" disabled>Logging In...</button>}
       </form>
       <div className="error-msg">
           {errorMsg}
